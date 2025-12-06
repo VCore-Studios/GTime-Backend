@@ -1,10 +1,9 @@
 package com.vblocks.gtime.service;
 
-import com.vblocks.gtime.dto.DetailInput;
-import com.vblocks.gtime.entity.Detail;
+import com.vblocks.gtime.dto.detail.DetailInput;
+import com.vblocks.gtime.entity.detail.Detail;
 import com.vblocks.gtime.repository.DetailRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

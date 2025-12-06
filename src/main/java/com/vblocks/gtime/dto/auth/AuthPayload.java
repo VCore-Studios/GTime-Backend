@@ -1,5 +1,6 @@
-package com.vblocks.gtime.dto;
+package com.vblocks.gtime.dto.auth;
 
+import com.vblocks.gtime.dto.user.UserInput;
 import com.vblocks.gtime.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;

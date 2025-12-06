@@ -1,7 +1,8 @@
-package com.vblocks.gtime.entity;
+package com.vblocks.gtime.entity.plant;
 
-import com.vblocks.gtime.dto.PlantInput;
-import com.vblocks.gtime.dto.WateringFrequency;
+import com.vblocks.gtime.entity.detail.Detail;
+import com.vblocks.gtime.entity.Note;
+import com.vblocks.gtime.entity.UserPlant;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,15 +43,19 @@ public class Plant {
     @Column(nullable = false)
     private CareDifficulty careDifficulty; // EASY, MEDIUM, HARD
 
-    @Embedded
-    @Column(nullable = false)
-    private WateringFrequency wateringFrequency; // e.g., "Once a week"
-
     @OneToMany(mappedBy = "plantType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserPlant> userPlants = new ArrayList<>();
 
     @OneToMany(mappedBy = "noteFor", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Note> notes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "plant", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<WateringFrequency> wateringFrequencies;
+
+    public void addFrequency(WateringFrequency frequency) {
+        wateringFrequencies.add(frequency);
+        frequency.setPlant(this);
+    }
 
     public void addDetail(Detail detail) {
         details.add(detail);

@@ -22,6 +22,15 @@ enum TimeUnit {
 input WateringFrequencyInput {
     length: ID!
     timeUnit: TimeUnit!
+    plantStage: PlantGrowthStageInput!
+}
+
+input PlantGrowthStageInput {
+    name: String!
+}
+
+type PlantGrowthStage {
+    name: String!
 }
 
 type WateringFrequency {
@@ -36,7 +45,7 @@ input PlantInput {
     image: String!
     details: [ID!]!
     careDifficulty: CareDifficulty!
-    wateringFrequency: WateringFrequencyInput!
+    wateringFrequencies: [WateringFrequencyInput!]!
 }
 
 input EditPlantInput {
@@ -51,12 +60,17 @@ enum CareDifficulty {
 }
 
 extend type Mutation {
+    # Admin only
     createPlant(input: PlantInput!): Plant!
+    # Admin only
     editPlant(plantId: ID!, plantDetails: EditPlantInput!): Plant!
+    # Admin only
     deletePlant(plantId: ID!): Boolean!
 }
 
 extend type Query {
+    # Anyone
     plants: [Plant!]!
+    # Anyone
     plant(id: ID!): Plant
 }

@@ -1,10 +1,10 @@
-package com.vblocks.gtime.component;
+package com.vblocks.gtime.component.plant;
 
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsMutation;
 import com.netflix.graphql.dgs.InputArgument;
-import com.vblocks.gtime.dto.PlantInput;
-import com.vblocks.gtime.entity.Plant;
+import com.vblocks.gtime.dto.plant.PlantInput;
+import com.vblocks.gtime.entity.plant.Plant;
 import com.vblocks.gtime.service.PlantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -1,4 +1,4 @@
-package com.vblocks.gtime.entity;
+package com.vblocks.gtime.entity.plant;
 
 public enum CareDifficulty {
     EASY,

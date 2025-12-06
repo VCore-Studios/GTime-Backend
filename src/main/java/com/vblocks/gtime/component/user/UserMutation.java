@@ -1,21 +1,18 @@
-package com.vblocks.gtime.component;
+package com.vblocks.gtime.component.user;
 
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
 import com.netflix.graphql.dgs.DgsMutation;
 import com.netflix.graphql.dgs.InputArgument;
 import com.netflix.graphql.dgs.exceptions.DgsEntityNotFoundException;
-import com.vblocks.gtime.dto.AuthPayload;
-import com.vblocks.gtime.dto.RegisterInput;
+import com.vblocks.gtime.dto.auth.AuthPayload;
+import com.vblocks.gtime.dto.auth.RegisterInput;
 import com.vblocks.gtime.entity.Role;
 import com.vblocks.gtime.entity.User;
 import com.vblocks.gtime.service.JwtTokenProvider;
 import com.vblocks.gtime.service.RefreshTokenService;
 import com.vblocks.gtime.service.UserService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

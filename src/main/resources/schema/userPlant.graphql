@@ -11,9 +11,15 @@ input UserPlantInput {
     name: String!
 }
 
+input EditUserPlantInput {
+    name: String!
+
+}
+
 type UserPlant {
     plantType: UserPlantType!
     name: String!
+    growthStage: PlantGrowthStage!
 }
 
 type UserPlantType {
@@ -24,5 +30,6 @@ type UserPlantType {
     image: String!
     details: [Detail!]!
     careDifficulty: CareDifficulty!
+    growthStage: PlantGrowthStage!
     wateringFrequency: WateringFrequency!
 }

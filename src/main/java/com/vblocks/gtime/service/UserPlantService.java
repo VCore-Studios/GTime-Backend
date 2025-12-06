@@ -1,20 +1,17 @@
 package com.vblocks.gtime.service;
 
-import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
-import com.vblocks.gtime.dto.UserPlantInput;
-import com.vblocks.gtime.entity.Plant;
+import com.vblocks.gtime.dto.userPlant.UserPlantInput;
+import com.vblocks.gtime.entity.plant.Plant;
 import com.vblocks.gtime.entity.User;
 import com.vblocks.gtime.entity.UserPlant;
 import com.vblocks.gtime.repository.PlantRepository;
 import com.vblocks.gtime.repository.UserPlantRepository;
 import com.vblocks.gtime.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

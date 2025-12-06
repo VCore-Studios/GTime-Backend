@@ -1,6 +1,7 @@
-package com.vblocks.gtime.dto;
+package com.vblocks.gtime.dto.plant;
 
-import com.vblocks.gtime.entity.CareDifficulty;
+import com.vblocks.gtime.entity.plant.CareDifficulty;
+import com.vblocks.gtime.entity.plant.WateringFrequency;
 import lombok.Data;
 
 import java.util.List;
@@ -13,5 +14,5 @@ public class PlantInput {
     private String image;
     private List<Long> details;
     private CareDifficulty careDifficulty;
-    private WateringFrequency wateringFrequency;
+    private List<WateringFrequency> wateringFrequencies;
 }

@@ -15,12 +15,17 @@ input EditDetailInput {
 }
 
 extend type Mutation {
+    # Admin
     createDetail(input: DetailInput!): Detail!
+    # Admin
     editDetail(detailId: ID!, detail: EditDetailInput!): Detail!
+    # Admin
     deleteDetail(detailId: ID!): Boolean!
 }
 
 extend type Query {
+    # Anyone
     details: [Detail!]!
+    # Anyone
     detail(id: ID!): Detail!
 }

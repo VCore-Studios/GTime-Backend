@@ -1,4 +1,4 @@
-package com.vblocks.gtime.dto;
+package com.vblocks.gtime.dto.user;
 
 import com.vblocks.gtime.entity.User;
 import lombok.AllArgsConstructor;

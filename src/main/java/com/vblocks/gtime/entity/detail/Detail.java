@@ -1,5 +1,6 @@
-package com.vblocks.gtime.entity;
+package com.vblocks.gtime.entity.detail;
 
+import com.vblocks.gtime.entity.plant.Plant;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

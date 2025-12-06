@@ -1,7 +1,6 @@
-package com.vblocks.gtime.component;
+package com.vblocks.gtime.component.detail;
 
 import com.netflix.graphql.dgs.DgsComponent;
-import com.vblocks.gtime.repository.DetailRepository;
 import com.vblocks.gtime.service.DetailService;
 import lombok.RequiredArgsConstructor;
 

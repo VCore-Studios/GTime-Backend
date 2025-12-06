@@ -1,5 +1,6 @@
 package com.vblocks.gtime.entity;
 
+import com.vblocks.gtime.entity.plant.Plant;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,8 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -40,5 +39,7 @@ public class UserPlant {
 
     private String latestImage;
 
+    @Enumerated(EnumType.STRING)
+    private GrowthStage growthStage;
 
 }

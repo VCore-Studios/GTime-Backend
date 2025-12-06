@@ -1,7 +1,7 @@
-package com.vblocks.gtime.component;
+package com.vblocks.gtime.component.userPlant;
 
 import com.netflix.graphql.dgs.*;
-import com.vblocks.gtime.dto.UserPlantInput;
+import com.vblocks.gtime.dto.userPlant.UserPlantInput;
 import com.vblocks.gtime.entity.UserPlant;
 import com.vblocks.gtime.service.UserPlantService;
 import lombok.AllArgsConstructor;

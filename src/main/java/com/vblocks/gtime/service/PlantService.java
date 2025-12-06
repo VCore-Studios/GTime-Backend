@@ -1,15 +1,14 @@
 package com.vblocks.gtime.service;
 
-import com.vblocks.gtime.dto.PlantInput;
-import com.vblocks.gtime.entity.Detail;
-import com.vblocks.gtime.entity.Plant;
+import com.vblocks.gtime.dto.plant.PlantInput;
+import com.vblocks.gtime.entity.detail.Detail;
+import com.vblocks.gtime.entity.plant.Plant;
 import com.vblocks.gtime.repository.DetailRepository;
 import com.vblocks.gtime.repository.PlantRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,20 +20,13 @@ public class PlantService {
     private final DetailRepository detailRepo;
 
     public Plant createPlant(PlantInput plantInput) {
-        System.out.println(plantInput.getName());
-        System.out.println(plantInput.getLatinName());
-        System.out.println(plantInput.getDescription());
-        System.out.println(plantInput.getImage());
-        System.out.println(plantInput.getCareDifficulty());
-        System.out.println(plantInput.getWateringFrequency());
-
         Plant plant = new Plant();
         plant.setName(plantInput.getName());
         plant.setLatinName(plantInput.getLatinName());
         plant.setDescription(plantInput.getDescription());
         plant.setImage(plantInput.getImage());
         plant.setCareDifficulty(plantInput.getCareDifficulty());
-        plant.setWateringFrequency(plantInput.getWateringFrequency());
+        plant.setWateringFrequencies(plantInput.getWateringFrequencies());
         for (Long detailName : plantInput.getDetails()) {
             Optional<Detail> detail = detailRepo.findById(detailName);
             if (detail.isEmpty()) continue;
