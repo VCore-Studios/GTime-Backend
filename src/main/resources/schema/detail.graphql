@@ -1,0 +1,26 @@
+type Detail {
+    id: ID!
+    name: String!
+    text: String!
+}
+
+input DetailInput {
+    name: String!
+    text: String!
+}
+
+input EditDetailInput {
+    name: String
+    text: String
+}
+
+extend type Mutation {
+    createDetail(input: DetailInput!): Detail!
+    editDetail(detailId: ID!, detail: EditDetailInput!): Detail!
+    deleteDetail(detailId: ID!): Boolean!
+}
+
+extend type Query {
+    details: [Detail!]!
+    detail(id: ID!): Detail!
+}

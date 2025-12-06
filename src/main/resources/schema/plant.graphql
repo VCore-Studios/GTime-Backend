@@ -1,0 +1,62 @@
+type Plant {
+    id: ID!
+    name: String!
+    latinName: String!
+    description: String!
+    image: String!
+    details: [Detail!]!
+    careDifficulty: CareDifficulty!
+    wateringFrequency: WateringFrequency!
+}
+
+enum TimeUnit {
+    NANOSECONDS
+    MICROSECONDS
+    MILLISECONDS
+    SECONDS
+    MINUTES
+    HOURS
+    DAYS
+}
+
+input WateringFrequencyInput {
+    length: ID!
+    timeUnit: TimeUnit!
+}
+
+type WateringFrequency {
+    length: ID!
+    timeUnit: TimeUnit!
+}
+
+input PlantInput {
+    name: String!
+    latinName: String!
+    description: String!
+    image: String!
+    details: [ID!]!
+    careDifficulty: CareDifficulty!
+    wateringFrequency: WateringFrequencyInput!
+}
+
+input EditPlantInput {
+    name: String
+    details: [ID!]
+}
+
+enum CareDifficulty {
+    EASY,
+    NORMAL,
+    HARD
+}
+
+extend type Mutation {
+    createPlant(input: PlantInput!): Plant!
+    editPlant(plantId: ID!, plantDetails: EditPlantInput!): Plant!
+    deletePlant(plantId: ID!): Boolean!
+}
+
+extend type Query {
+    plants: [Plant!]!
+    plant(id: ID!): Plant
+}

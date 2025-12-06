@@ -1,0 +1,19 @@
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    roles: [String!]!
+}
+
+extend type Query {
+    # Get current authenticated user
+    me: User!
+    # Get user by ID
+    user(id: ID!): User
+    # Get user by username
+    userByUsername(username: String!): User
+    # Get user by email
+    userByEmail(email: String!): User
+    # Get all users (Admin only)
+    allUsers: [User!]!
+}

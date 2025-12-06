@@ -1,0 +1,28 @@
+extend type Query {
+    myPlants: [UserPlant!]
+}
+
+extend type Mutation {
+    createUserPlant(userPlantInput: UserPlantInput!): UserPlant!
+}
+
+input UserPlantInput {
+    plantType: ID!
+    name: String!
+}
+
+type UserPlant {
+    plantType: UserPlantType!
+    name: String!
+}
+
+type UserPlantType {
+    id: ID!
+    name: String!
+    latinName: String!
+    description: String!
+    image: String!
+    details: [Detail!]!
+    careDifficulty: CareDifficulty!
+    wateringFrequency: WateringFrequency!
+}

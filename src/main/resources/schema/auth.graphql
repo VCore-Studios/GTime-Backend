@@ -1,0 +1,30 @@
+extend type Mutation {
+    # Login with username and password
+    login(username: String!, password: String!): AuthPayload!
+
+    # Register a new user
+    register(input: RegisterInput!): AuthPayload!
+
+    # Refresh access token using refresh token
+    refreshToken(refreshToken: String!): AuthPayload!
+
+    # Logout (revoke single refresh token)
+    logout(refreshToken: String!): Boolean!
+
+    # Logout from all devices (revoke all refresh tokens)
+    logoutAll: Boolean!
+}
+
+
+input RegisterInput {
+    username: String!
+    email: String!
+    password: String!
+}
+
+type AuthPayload {
+    accessToken: String!
+    refreshToken: String!
+    user: User!
+}
+
